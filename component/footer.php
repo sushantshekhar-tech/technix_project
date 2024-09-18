@@ -8,6 +8,7 @@
                     <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
                     <li class="list-inline-item"><a href="#">Terms of Service</a></li>
                     <li class="list-inline-item"><a href="jobs.php">Careers</a></li>
+                    <li class="list-inline-item"><a href="admin">Admin</a></li>
                 </ul>
             </div>
         </div>

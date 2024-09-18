@@ -1,10 +1,10 @@
 <?php
-// Include the database connection
+
 include 'essentials/db.php';
 
-// Check if a role parameter is passed in the URL
+
 if (isset($_GET['role'])) {
-    $role = htmlspecialchars($_GET['role']); // Sanitize input
+    $role = htmlspecialchars($_GET['role']); 
 
     // Fetch the job details based on the role
     $sql = "SELECT title, description FROM jobs WHERE role = ?";
@@ -19,7 +19,6 @@ if (isset($_GET['role'])) {
     die("No job role specified.");
 }
 
-// Close the connection after fetching
 $conn->close();
 ?>
 
@@ -30,11 +29,11 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= htmlspecialchars($job_title); ?></title>
 
-    <!-- Bootstrap CSS -->
+ 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CSS -->
+ 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- AOS CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     
     <style>
@@ -53,14 +52,14 @@ $conn->close();
 </head>
 <body>
 
-<!-- Header -->
+
 <header>
 <?php 
  require "component/nav.php"
  ?>
 </header>
 
-<!-- Job Detail -->
+
 <div class="container my-5" data-aos="fade-up">
     <div class="row">
         <div class="col-12">
@@ -77,13 +76,13 @@ $conn->close();
                 <h4>Job Description</h4>
                 <p><?= nl2br(htmlspecialchars($job_description)); ?></p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal"><i class="bi bi-briefcase"></i> Apply Now</button>
-                <a href="jobs.php" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to Jobs</a>
+                <a href="career" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to Jobs</a>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Apply Modal -->
+
 <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -114,40 +113,38 @@ $conn->close();
     </div>
 </div>
 
-<!-- Footer -->
+
 <footer class="text-center">
 <?php 
  require "component/footer.php"
  ?>
 </footer>
 
-<!-- Bootstrap JS and dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- AOS JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-    // Initialize AOS
+ 
     AOS.init();
 
-    // Handle form submission
+    
     document.getElementById('applyForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent the default form submission
+        e.preventDefault(); 
 
-        // Get form data
+      
         var name = document.getElementById('applicantName').value;
         var email = document.getElementById('applicantEmail').value;
         var resume = document.getElementById('applicantResume').value;
         var jobRole = document.getElementById('jobRole').value;
 
-        // Create an XMLHttpRequest to send form data to the server
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'apply_job.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
             if (xhr.status === 200) {
-                // Show confirmation message
+           
                 document.getElementById('confirmationMessage').classList.remove('d-none');
-                // Optionally, clear the form fields
+             
                 document.getElementById('applyForm').reset();
             }
         };

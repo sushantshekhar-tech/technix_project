@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Technix</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -13,26 +12,25 @@
 </head>
 <body>
 
-<!-- Navbar -->
+
  <?php 
  require "component/nav.php"
  ?>
 
-<!-- Hero Section -->
-<div class="hero">
+
+<div class="hero" style="background:url(assets/brand.png);">
     <div class="container">
-        <h1>Welcome to Technix</h1>
-        <p>Your Trusted Technology Partner</p>
+        <!-- <h1>Welcome to Technix</h1>
+        <p>Your Trusted Technology Partner</p> -->
         <a href="jobs.php" class="btn btn-primary btn-lg mt-3">Explore Careers</a>
     </div>
 </div>
 
-<!-- Content Section 1 -->
 <div class="content-section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <img src="https://via.placeholder.com/600x400" alt="Service Image">
+                <img src="assets/proj.png" alt="Service Image" style="border: 2px solid black; border-radius:20px;">
             </div>
             <div class="col-lg-6">
                 <h2>Our Services</h2>
@@ -43,12 +41,12 @@
     </div>
 </div>
 
-<!-- Content Section 2 -->
+
 <div class="content-section bg-light">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <img src="https://via.placeholder.com/600x400" alt="Project Image">
+                <img src="assets/proj-1.png" alt="Project Image" style="border: 2px solid black; border-radius:20px;">
             </div>
             <div class="col-lg-6 order-lg-1">
                 <h2>Our Projects</h2>
@@ -59,14 +57,14 @@
     </div>
 </div>
 
-<!-- Footer -->
+
 <footer class="text-center">
 <?php 
  require "component/footer.php"
  ?>
 </footer>
 
-<!-- Bootstrap JS and dependencies -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

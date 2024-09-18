@@ -1,8 +1,8 @@
 <?php
-// Include the database connection
+
 include 'essentials/db.php';
 
-// Fetch all job applications
+
 $sql = "SELECT id, name, email, resume, job_role, application_date FROM job_applications";
 $result = $conn->query($sql);
 ?>
@@ -14,14 +14,13 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Job Applications</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- Header -->
+
 <header>
     
 <?php 
@@ -57,19 +56,19 @@ $result = $conn->query($sql);
     </table>
 </div>
 
-<!-- Footer -->
+
 <footer class="text-center">
 <?php 
  require "component/footer.php"
  ?>
 </footer>
 
-<!-- Bootstrap JS and dependencies -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
 <?php
-// Close the connection
+
 $conn->close();
 ?>
