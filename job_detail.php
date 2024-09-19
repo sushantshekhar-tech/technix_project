@@ -6,7 +6,7 @@ include 'essentials/db.php';
 if (isset($_GET['role'])) {
     $role = htmlspecialchars($_GET['role']); 
 
-    // Fetch the job details based on the role
+
     $sql = "SELECT title, description FROM jobs WHERE role = ?";
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("s", $role);
